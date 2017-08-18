@@ -1,4 +1,7 @@
 <div>
-  <app-nav></app-nav>
+  <app-nav [bgColor]="'#e3f2fd'" [bgClass]="'navbar-dark bg-info'" (ChangePageBackground)="onChangePageBackground($event)"></app-nav>
+  <!--{{bgColor}}-->
+  <hr [ngStyle]="{backgroundColor: bgColor, width: '70%', height: '2px'}">
   <router-outlet></router-outlet>
+  <hr [ngStyle]="{backgroundColor: bgColor, width: '70%', height: '2px'}">
 </div>

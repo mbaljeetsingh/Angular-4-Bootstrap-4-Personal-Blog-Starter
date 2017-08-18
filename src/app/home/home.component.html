@@ -1,3 +1,12 @@
-<p>
-  home works!
-</p>
+<div>
+  <!--<div class="jumbotron jumbotron-fluid" [ngStyle]="{background: home.backgroundColor}">-->
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container text-center">
+      <img [src]="assetsUrl + home.img.src"
+           class="rounded-circle"
+           [alt]="home.img.alt">
+      <h1 class="display-3">{{home.name}}</h1>
+      <p class="lead">{{home.designation}}</p>
+    </div>
+  </div>
+</div>
