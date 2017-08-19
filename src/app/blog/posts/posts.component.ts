@@ -1,30 +1,17 @@
-import { Component, OnInit } from '@angular/core';
-import {BlogService} from '../blog.service';
-import {Http} from '@angular/http';
+import {AfterContentInit, Component, Input, OnChanges, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-posts',
   templateUrl: './posts.component.html',
   styleUrls: ['./posts.component.css']
 })
-export class PostsComponent implements OnInit {
-  posts = [];
+export class PostsComponent implements OnInit{
+  @Input() posts = [];
   currentPost;
 
-  constructor(private blogService: BlogService, private http: Http) { }
+  constructor() { }
 
-  ngOnInit() {
-    // console.log(this.blogService.getAllPosts());
-    // this.posts = this.blogService.getAllPosts();
-      this.http.get('https://jsonplaceholder.typicode.com/posts')
-          .map((response) => {
-              return response.json();
-          })
-          .subscribe((data) => {
-              // console.log(data);
-              this.posts =  data;
-          });
-    console.log(this.posts);
-  }
+    ngOnInit() {
+    }
 
 }

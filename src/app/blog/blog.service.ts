@@ -8,20 +8,12 @@ export class BlogService {
 
   constructor(private http: Http) { }
 
-  fetchAllPosts() {
-    this.http.get('https://jsonplaceholder.typicode.com/posts')
-        .map((response) => {
-          return response.json();
-        })
-        .subscribe((data) => {
-          console.log(data);
-          this.posts = data;
-        });
-  }
+    fetchAllPosts() {
+        return this.http.get('https://jsonplaceholder.typicode.com/posts')
+            .map((response) => {
+                return response.json();
+            });
+    }
 
-  getAllPosts() {
-    // console.log(this.posts);
-    return this.posts.slice();
-  }
 
 }
