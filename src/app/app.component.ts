@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
-  bgColor = '#7fc1cc';
+  bgColor = '#007BFF';
 
   onChangePageBackground(backgroundColor){
     console.log(backgroundColor);

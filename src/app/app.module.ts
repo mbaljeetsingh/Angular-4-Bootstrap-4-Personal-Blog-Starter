@@ -13,10 +13,11 @@ import { ContactComponent } from './contact/contact.component';
 import {FormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
 import { ServicesComponent } from './services/services.component';
-import { BlogPostComponent } from './blog/blog-post/blog-post.component';
-import { BlogPostDetailComponent } from './blog/blog-post-detail/blog-post-detail.component';
 import {SharedService} from './shared.service';
 import {HomeService} from './home/home.service';
+import { PostsComponent } from './blog/posts/posts.component';
+import {BlogService} from './blog/blog.service';
+import {HttpModule} from '@angular/http';
 
 const routes = [
     // {path: '', component: NavComponent},
@@ -28,7 +29,7 @@ const routes = [
     {path: 'services', component: ServicesComponent},
     {path: 'portfolio', component: PortfolioComponent},
     {path: 'contact', component: ContactComponent},
-    {path: '**', redirectTo: 'home'}
+    // {path: '**', redirectTo: 'home'}
 ];
 
 @NgModule({
@@ -43,15 +44,15 @@ const routes = [
     PortfolioComponent,
     ContactComponent,
     ServicesComponent,
-    BlogPostComponent,
-    BlogPostDetailComponent
+    PostsComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+      HttpModule
   ],
-  providers: [SharedService, HomeService],
+  providers: [SharedService, HomeService, BlogService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
