@@ -10,7 +10,6 @@ import { ContactComponent } from './contact/contact.component';
 import {FormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
 import {SharedService} from './shared.service';
-import {HomeService} from './home/home.service';
 import { PostsComponent } from './blog/posts/posts.component';
 import {BlogService} from './blog/blog.service';
 import {HttpModule} from '@angular/http';
@@ -40,7 +39,7 @@ const routes = [
     RouterModule.forRoot(routes),
       HttpModule
   ],
-  providers: [SharedService, HomeService, BlogService],
+  providers: [SharedService, BlogService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
