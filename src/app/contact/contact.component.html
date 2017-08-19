@@ -1,3 +1,35 @@
-<p>
-  contact works!
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <form (ngSubmit)="onSubmit(form)" #form="ngForm">
+        <div class="form-group">
+          <label for="name">Name </label>
+          <input type="text" class="form-control" name="name" id="name" aria-describedby="nameId"
+                 placeholder="Enter Your Name" ngModel required #nameCtrl="ngModel">
+          <p class="form-text text-danger" *ngIf="nameCtrl.touched && nameCtrl.invalid">
+            *Name is required
+          </p>
+        </div>
+        <div class="form-group">
+          <label for="email">Email </label>
+          <input type="text" class="form-control" name="email" id="email" aria-describedby="emailId"
+                 placeholder="Enter Your Email" ngModel required #emailCtrl="ngModel">
+          <p class="form-text text-danger" *ngIf="emailCtrl.touched && emailCtrl.invalid">
+            *Email is required
+          </p>
+        </div>
+        <div class="form-group">
+          <label for="message">Message </label>
+          <textarea class="form-control" name="message" id="message" rows="4" ngModel required #messageCtrl="ngModel" minlength="10" maxlength="100"></textarea>
+          <p class="form-text text-danger" *ngIf="messageCtrl.touched && messageCtrl.invalid && messageCtrl.errors.required">
+            *Message is required
+          </p>
+          <p class="form-text text-danger" *ngIf="messageCtrl.touched && messageCtrl.invalid && messageCtrl.errors.minlength">
+            *Message length should be b/w 10 and 100
+          </p>
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Send Mail</button>
+      </form>
+    </div>
+  </div>
+</div>
