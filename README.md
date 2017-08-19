@@ -1,4 +1,6 @@
-# DBaljeetsinghNg
+# Angualr4 Bootstrap4 Personal Blog Starter
+
+[live demo](https://mbaljeetsingh.github.io/Angular-4-Bootstrap-4-Personal-Blog-Starter/)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.6.
 
