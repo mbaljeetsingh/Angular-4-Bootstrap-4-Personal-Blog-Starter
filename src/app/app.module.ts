@@ -5,14 +5,10 @@ import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
-import { ResumeComponent } from './resume/resume.component';
 import { BlogComponent } from './blog/blog.component';
-import { SkillsComponent } from './skills/skills.component';
-import { PortfolioComponent } from './portfolio/portfolio.component';
 import { ContactComponent } from './contact/contact.component';
 import {FormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
-import { ServicesComponent } from './services/services.component';
 import {SharedService} from './shared.service';
 import {HomeService} from './home/home.service';
 import { PostsComponent } from './blog/posts/posts.component';
@@ -24,12 +20,8 @@ const routes = [
     {path: 'home', component: HomeComponent, useAsDefault: true},
     {path: 'about', component: AboutComponent},
     {path: 'blog', component: BlogComponent},
-    {path: 'resume', component: ResumeComponent},
-    {path: 'skills', component: SkillsComponent},
-    {path: 'services', component: ServicesComponent},
-    {path: 'portfolio', component: PortfolioComponent},
     {path: 'contact', component: ContactComponent},
-    // {path: '**', redirectTo: 'home'}
+    {path: '**', redirectTo: 'blog'}
 ];
 
 @NgModule({
@@ -38,12 +30,8 @@ const routes = [
     NavComponent,
     HomeComponent,
     AboutComponent,
-    ResumeComponent,
     BlogComponent,
-    SkillsComponent,
-    PortfolioComponent,
     ContactComponent,
-    ServicesComponent,
     PostsComponent,
   ],
   imports: [
